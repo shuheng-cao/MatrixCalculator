@@ -38,6 +38,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                                         <connections>
+                                                            <action selector="editEntry11:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="6s5-1g-bqP"/>
                                                             <action selector="touchEntry11:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="coO-CP-ETn"/>
                                                         </connections>
                                                     </textField>
@@ -53,6 +54,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                                         <connections>
+                                                            <action selector="editEntry12:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="9eB-dg-L77"/>
                                                             <action selector="touchEntry12:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="pqt-7r-3c0"/>
                                                         </connections>
                                                     </textField>
@@ -68,6 +70,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                                         <connections>
+                                                            <action selector="editEntry13:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="2On-tj-ube"/>
                                                             <action selector="touchEntry13:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="IkQ-2c-s6O"/>
                                                         </connections>
                                                     </textField>
@@ -82,6 +85,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                                         <connections>
+                                                            <action selector="editEntry14:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="K1s-HD-7Ty"/>
                                                             <action selector="touchEntry14:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="SKz-eB-ThV"/>
                                                         </connections>
                                                     </textField>
@@ -102,6 +106,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                                         <connections>
+                                                            <action selector="editEntry21:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="8Yj-uz-sCN"/>
                                                             <action selector="touchEntry21:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="aRd-2Y-7gJ"/>
                                                         </connections>
                                                     </textField>
@@ -117,6 +122,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                                         <connections>
+                                                            <action selector="editEntry22:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="gbJ-LS-to0"/>
                                                             <action selector="touchEntry22:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="PYn-Gx-iGg"/>
                                                         </connections>
                                                     </textField>
@@ -131,6 +137,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                                         <connections>
+                                                            <action selector="editEntry23:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="wcI-iV-dCh"/>
                                                             <action selector="touchEntry23:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="OQI-vb-m3b"/>
                                                         </connections>
                                                     </textField>
@@ -145,6 +152,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry24:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="mIp-wg-SYY"/>
                                                             <action selector="toouchEntry24:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="p2P-HX-8eV"/>
                                                         </connections>
                                                     </textField>
@@ -164,6 +172,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry31:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="Zj1-Nv-Lab"/>
                                                             <action selector="touchEntry31:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="ybn-cK-ico"/>
                                                         </connections>
                                                     </textField>
@@ -178,6 +187,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry32:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="TtB-Vw-JxX"/>
                                                             <action selector="touchEntry32:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="EBd-SX-QCO"/>
                                                         </connections>
                                                     </textField>
@@ -192,6 +202,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry33:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="WLZ-s4-tRV"/>
                                                             <action selector="touchEntry33:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="9OW-WD-Ld3"/>
                                                         </connections>
                                                     </textField>
@@ -206,6 +217,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry34:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="yOC-fE-bSb"/>
                                                             <action selector="touchEntry34:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="DYp-jZ-kru"/>
                                                         </connections>
                                                     </textField>
@@ -225,6 +237,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry41:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="RKl-OE-nrc"/>
                                                             <action selector="touchEntry41:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="ufC-MS-tQ8"/>
                                                         </connections>
                                                     </textField>
@@ -239,6 +252,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry42:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="n3q-z4-8VY"/>
                                                             <action selector="touchEntry42:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="Hwp-yd-Shg"/>
                                                         </connections>
                                                     </textField>
@@ -253,6 +267,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry43:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="nUl-LG-HJR"/>
                                                             <action selector="touchEntry43:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="rx8-bE-fhx"/>
                                                         </connections>
                                                     </textField>
@@ -267,6 +282,7 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="editEntry44:" destination="KQS-Nu-2w8" eventType="editingDidBegin" id="uit-Cz-dCn"/>
                                                             <action selector="touchEntry44:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="tGm-35-oyS"/>
                                                         </connections>
                                                     </textField>
@@ -277,7 +293,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-XP-TtC">
-                                <rect key="frame" x="267" y="481" width="95" height="53"/>
+                                <rect key="frame" x="267" y="542" width="95" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.9363580346" green="0.63606536390000001" blue="0.2366364896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
@@ -289,20 +305,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzY-QV-pfx">
-                                <rect key="frame" x="267" y="542" width="95" height="53"/>
+                                <rect key="frame" x="267" y="481" width="95" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40385821461677551" green="0.40754550695419312" blue="0.42350050806999207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.9363580346" green="0.63606536390000001" blue="0.2366364896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Inverse">
+                                <state key="normal" title="RREF">
                                     <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIS-ez-evU">
-                                <rect key="frame" x="140" y="542" width="119" height="53"/>
+                                <rect key="frame" x="13" y="481" width="119" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40385821461677551" green="0.40754550695419312" blue="0.42350050806999207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Eigenvector">
+                                <state key="normal" title="Det">
                                     <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -350,27 +366,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Null Space">
+                                <state key="normal" title="Diagonal">
                                     <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="ibc-de-mAG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-WR-1wJ">
-                                <rect key="frame" x="13" y="481" width="119" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Col Space">
-                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="0Hj-ev-w5W"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7A-hp-DgK">
-                                <rect key="frame" x="13" y="420" width="119" height="53"/>
+                                <rect key="frame" x="140" y="542" width="119" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
@@ -382,12 +386,25 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-h5-MXw">
-                                <rect key="frame" x="212" y="431" width="34" height="30"/>
+                                <rect key="frame" x="213" y="431" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-WR-1wJ">
+                                <rect key="frame" x="13" y="420" width="119" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Inverse">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="0Hj-ev-w5W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
@@ -495,7 +512,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EeS-55-u7i"/>
         <segue reference="rdY-Ny-XlY"/>
     </inferredMetricsTieBreakers>
 </document>

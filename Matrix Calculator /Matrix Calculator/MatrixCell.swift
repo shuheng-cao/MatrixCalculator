@@ -22,12 +22,13 @@ class myCellType {
         col = x
         row = y
         pointer = myPointer
-        initialize(x, y)
+        initialize()
     }
     
-    func initialize(_ x: Int,_ y: Int) {
+    func initialize() {
         // The default occupied cells are 2 * 2 array
-        if (x < 2 && y < 2) {
+        if (col < 2 && row < 2) {
+            value = 0
             userInput = true
             needHelight = true
         } else {

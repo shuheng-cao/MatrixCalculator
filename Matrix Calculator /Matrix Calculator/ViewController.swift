@@ -97,6 +97,81 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     // Control Center: Any change in text field will be handled by this part
     
+    // Helper for editing text
+    func helperForEdit(_ x: Int,_ y: Int,_ sender: UITextField) {
+        matrixCells[x-1][y-1].initialize()
+        sender.text = ""
+    }
+    
+    // When you enter value, you should not see anything
+    @IBAction func editEntry11(_ sender: UITextField) {
+        helperForEdit(1, 1, sender)
+    }
+    
+    @IBAction func editEntry12(_ sender: UITextField) {
+        helperForEdit(1, 2, sender)
+    }
+    
+    @IBAction func editEntry13(_ sender: UITextField) {
+        helperForEdit(1, 3, sender)
+    }
+    
+    @IBAction func editEntry14(_ sender: UITextField) {
+        helperForEdit(1, 4, sender)
+    }
+    
+    @IBAction func editEntry21(_ sender: UITextField) {
+        helperForEdit(2, 1, sender)
+    }
+    
+    @IBAction func editEntry22(_ sender: UITextField) {
+        helperForEdit(2, 2, sender)
+    }
+    
+    @IBAction func editEntry23(_ sender: UITextField) {
+        helperForEdit(2, 3, sender)
+    }
+    
+    @IBAction func editEntry24(_ sender: UITextField) {
+        helperForEdit(2, 4, sender)
+    }
+    
+    
+    @IBAction func editEntry31(_ sender: UITextField) {
+        helperForEdit(3, 1, sender)
+    }
+    
+    @IBAction func editEntry32(_ sender: UITextField) {
+        helperForEdit(3, 2, sender)
+    }
+    
+    @IBAction func editEntry33(_ sender: UITextField) {
+        helperForEdit(3, 3, sender)
+    }
+    
+    @IBAction func editEntry34(_ sender: UITextField) {
+        helperForEdit(3, 4, sender)
+    }
+    
+    @IBAction func editEntry41(_ sender: UITextField) {
+        helperForEdit(4, 1, sender)
+    }
+    
+    @IBAction func editEntry42(_ sender: UITextField) {
+        helperForEdit(4, 2, sender)
+    }
+    
+    @IBAction func editEntry43(_ sender: UITextField) {
+        helperForEdit(4, 3, sender)
+    }
+    
+    @IBAction func editEntry44(_ sender: UITextField) {
+        helperForEdit(4, 4, sender)
+    }
+    
+    
+    
+    
     // Helper: I should have do this using loop but I don't know how.
     // This helper is uncessary
     func helperForTouch(_ x: Int,_ y: Int, _ message: String) {
@@ -120,9 +195,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             for i in matrixCells {
                 for j in i {
                     j.updateHighlight(maxx, maxy)
+                    j.cancelHighlight(maxx, maxy)
                     j.updateAfterTouched()
                 }
             }
+            print("\(maxx), \(maxy)")
         } else {
             matrixCells[x-1][y-1].deleteInput()
             var maxx = 1, maxy = 1
@@ -141,6 +218,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             for i in matrixCells {
                 for j in i {
+                    j.updateHighlight(maxx, maxy)
                     j.cancelHighlight(maxx, maxy)
                     j.updateAfterTouched()
                 }
@@ -148,6 +226,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // While you finishing editing text field
     // This is very bad format, I will fix this one day
     @IBAction func touchEntry11(_ sender: UITextField) {
         helperForTouch(1, 1, sender.text!)
@@ -218,7 +297,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func touchClearButton(_ sender: UIButton) {
         for i in matrixCells {
             for j in i {
-                j.initialize(j.col, j.row)
+                j.initialize()
             }
         }
     }
