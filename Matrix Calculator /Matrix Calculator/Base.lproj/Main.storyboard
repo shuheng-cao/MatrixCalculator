@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="POu-WG-Irk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Matrix Calculator-->
+        <scene sceneID="sAW-Lb-m1o">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" id="KQS-Nu-2w8" userLabel="Matrix Calculator" customClass="ViewController" customModule="Matrix_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lgf-HN-R7B"/>
+                        <viewControllerLayoutGuide type="bottom" id="s5a-my-9y9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="9NU-1Q-1L9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SU9-IG-Hgm" userLabel="Matrix Area">
+                                <rect key="frame" x="40" y="50" width="295" height="317"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="center" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L6P-c6-XwE" userLabel="Col1">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="64.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Raq-M8-dFL" userLabel="Row1">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="64.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-0l-ruI" userLabel="Entry11">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="64.5"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="touchEntry11:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="coO-CP-ETn"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcD-ia-0PO" userLabel="Row2">
+                                                <rect key="frame" x="76.5" y="0.0" width="66" height="64.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57h-bt-pTk" userLabel="Entry12">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="64.5"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="touchEntry12:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="pqt-7r-3c0"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bra-3u-vml" userLabel="Row3">
+                                                <rect key="frame" x="152.5" y="0.0" width="66.5" height="64.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4Z-Zw-d3M" userLabel="Entry13">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="64.5"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="touchEntry13:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="IkQ-2c-s6O"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSZ-g4-WLV" userLabel="Row4">
+                                                <rect key="frame" x="229" y="0.0" width="66" height="64.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ho5-ed-5Kh" userLabel="Entry14">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="64.5"/>
+                                                        <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="touchEntry14:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="SKz-eB-ThV"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pKQ-4r-Ycw" userLabel="Col2">
+                                        <rect key="frame" x="0.0" y="84.5" width="295" height="64"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pwq-oT-5Ec" userLabel="Row1">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1n3-Mh-a8k" userLabel="Entry21">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="64"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="touchEntry21:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="aRd-2Y-7gJ"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaD-Qz-CnA" userLabel="Row2">
+                                                <rect key="frame" x="76.5" y="0.0" width="66" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjN-C8-kVb" userLabel="Entry22">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="64"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="touchEntry22:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="PYn-Gx-iGg"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XqK-9E-FxQ" userLabel="Row3">
+                                                <rect key="frame" x="152.5" y="0.0" width="66.5" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2W-bb-ooM" userLabel="Entry23">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="64"/>
+                                                        <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="touchEntry23:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="OQI-vb-m3b"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnw-Ek-BCX" userLabel="Row4">
+                                                <rect key="frame" x="229" y="0.0" width="66" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypy-BP-0KS" userLabel="Entry24">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="64"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="toouchEntry24:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="p2P-HX-8eV"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DJ4-Ht-gf9" userLabel="Col3">
+                                        <rect key="frame" x="0.0" y="168.5" width="295" height="64.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcP-c1-DPG" userLabel="Row1">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="64.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x70-9g-kOI" userLabel="Entry31">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="64.5"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="touchEntry31:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="ybn-cK-ico"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkT-pI-Jgt" userLabel="Row2">
+                                                <rect key="frame" x="76.5" y="0.0" width="66" height="64.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUa-Ag-K1R" userLabel="Entry32">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="64.5"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="touchEntry32:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="EBd-SX-QCO"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCC-OY-CvA" userLabel="Row3">
+                                                <rect key="frame" x="152.5" y="0.0" width="66.5" height="64.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVn-5T-eYK" userLabel="Entry33">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="64.5"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="touchEntry33:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="9OW-WD-Ld3"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-T1-DO2" userLabel="Row4">
+                                                <rect key="frame" x="229" y="0.0" width="66" height="64.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="frN-TQ-pSl" userLabel="Entry34">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="64.5"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="touchEntry34:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="DYp-jZ-kru"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cKG-GD-p0Q" userLabel="Col4">
+                                        <rect key="frame" x="0.0" y="253" width="295" height="64"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEG-5y-wdD" userLabel="Row1">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lk9-SX-zab" userLabel="Entry41">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="64"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="touchEntry41:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="ufC-MS-tQ8"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="khi-23-Q2E" userLabel="Row2">
+                                                <rect key="frame" x="76.5" y="0.0" width="66" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hw-j1-a51" userLabel="Entry42">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="64"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="touchEntry42:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="Hwp-yd-Shg"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3kg-yJ-Xga" userLabel="Row3">
+                                                <rect key="frame" x="152.5" y="0.0" width="66.5" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1vF-gh-j0z" userLabel="Entry43">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="64"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="touchEntry43:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="rx8-bE-fhx"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fEI-hI-nzK" userLabel="Row4">
+                                                <rect key="frame" x="229" y="0.0" width="66" height="64"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6f-zr-e0E" userLabel="Entry44">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="64"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="touchEntry44:" destination="KQS-Nu-2w8" eventType="editingDidEnd" id="tGm-35-oyS"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-XP-TtC">
+                                <rect key="frame" x="267" y="481" width="95" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9363580346" green="0.63606536390000001" blue="0.2366364896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="History">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eia-Bu-OZz" kind="presentation" modalTransitionStyle="flipHorizontal" id="EeS-55-u7i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzY-QV-pfx">
+                                <rect key="frame" x="267" y="542" width="95" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40385821461677551" green="0.40754550695419312" blue="0.42350050806999207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Inverse">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIS-ez-evU">
+                                <rect key="frame" x="140" y="542" width="119" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40385821461677551" green="0.40754550695419312" blue="0.42350050806999207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Eigenvector">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="Aak-6n-U1a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1D-Vd-Psl">
+                                <rect key="frame" x="267" y="420" width="95" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93635803461074829" green="0.63606536388397217" blue="0.23663648962974548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="Z7D-lr-mHH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpr-IW-vd3">
+                                <rect key="frame" x="13" y="542" width="119" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Eigenvalue">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="PSQ-72-RBr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMg-qI-ihP">
+                                <rect key="frame" x="140" y="420" width="119" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Power         ">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="w2t-xK-gkr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXp-Dr-iNA">
+                                <rect key="frame" x="140" y="481" width="119" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Null Space">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="ibc-de-mAG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-WR-1wJ">
+                                <rect key="frame" x="13" y="481" width="119" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Col Space">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="0Hj-ev-w5W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7A-hp-DgK">
+                                <rect key="frame" x="13" y="420" width="119" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40385821459999999" green="0.40754550699999997" blue="0.42350050810000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Transpose">
+                                    <color key="titleColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchClearButton:" destination="KQS-Nu-2w8" eventType="touchUpInside" id="IVC-pp-9fb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-h5-MXw">
+                                <rect key="frame" x="212" y="431" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="SU9-IG-Hgm" firstAttribute="top" secondItem="Lgf-HN-R7B" secondAttribute="bottom" constant="30" id="LQJ-uT-pPX"/>
+                            <constraint firstItem="SU9-IG-Hgm" firstAttribute="leading" secondItem="9NU-1Q-1L9" secondAttribute="leading" constant="40" id="YPs-he-tKr"/>
+                            <constraint firstAttribute="trailing" secondItem="SU9-IG-Hgm" secondAttribute="trailing" constant="40" id="csL-UP-1fg"/>
+                            <constraint firstItem="s5a-my-9y9" firstAttribute="top" secondItem="SU9-IG-Hgm" secondAttribute="bottom" constant="300" id="ff0-QP-3Tc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HtG-KH-WOe"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Matrix!" largeTitleDisplayMode="never" id="gNc-md-N2N" userLabel="Matrix Calculator"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="Entry11" destination="lQ8-0l-ruI" id="I7v-KN-8sM"/>
+                        <outlet property="Entry12" destination="57h-bt-pTk" id="Wlq-K7-dwF"/>
+                        <outlet property="Entry13" destination="x4Z-Zw-d3M" id="lBq-9z-G3x"/>
+                        <outlet property="Entry14" destination="ho5-ed-5Kh" id="uMd-RR-OUq"/>
+                        <outlet property="Entry21" destination="1n3-Mh-a8k" id="rMB-7f-Xmh"/>
+                        <outlet property="Entry22" destination="rjN-C8-kVb" id="XJ7-kW-EY7"/>
+                        <outlet property="Entry23" destination="k2W-bb-ooM" id="Ucj-2F-65f"/>
+                        <outlet property="Entry24" destination="Ypy-BP-0KS" id="aAx-q7-mRx"/>
+                        <outlet property="Entry31" destination="x70-9g-kOI" id="LKy-4E-BQ2"/>
+                        <outlet property="Entry32" destination="eUa-Ag-K1R" id="vZd-Nj-rLp"/>
+                        <outlet property="Entry33" destination="zVn-5T-eYK" id="PNh-iE-pDd"/>
+                        <outlet property="Entry34" destination="frN-TQ-pSl" id="4KZ-Vu-Y8b"/>
+                        <outlet property="Entry41" destination="Lk9-SX-zab" id="C5x-68-F1U"/>
+                        <outlet property="Entry42" destination="2hw-j1-a51" id="k3b-sg-0Gg"/>
+                        <outlet property="Entry43" destination="1vF-gh-j0z" id="6Tk-wN-sLF"/>
+                        <outlet property="Entry44" destination="M6f-zr-e0E" id="sno-cR-lu4"/>
+                        <outlet property="clearButton" destination="H1D-Vd-Psl" id="c6A-jp-48k"/>
+                        <outlet property="colSpaceButton" destination="LZU-WR-1wJ" id="trU-Gp-t6r"/>
+                        <outlet property="eigenValuebutton" destination="qpr-IW-vd3" id="WRV-wR-qMT"/>
+                        <outlet property="eigenVectorButton" destination="QIS-ez-evU" id="INo-5n-rL7"/>
+                        <outlet property="historyButton" destination="nOm-XP-TtC" id="h2n-e5-Fh2"/>
+                        <outlet property="inverseButton" destination="cMg-qI-ihP" id="9dI-xh-M5j"/>
+                        <outlet property="nullSpaceButton" destination="xXp-Dr-iNA" id="edV-50-vZO"/>
+                        <outlet property="powerButton" destination="JzY-QV-pfx" id="NZP-cu-DJC"/>
+                        <outlet property="transposeButton" destination="b7A-hp-DgK" id="PeW-Vg-dv0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ql7-cN-byu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743.20000000000005" y="301.79910044977515"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fAY-qi-3vV">
+            <objects>
+                <viewController id="eia-Bu-OZz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="87j-DI-pIH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJb-ud-fLW">
+                                <rect key="frame" x="94" y="34" width="186" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" red="0.99404761900000005" green="0.9880952381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgJ-qO-2CC">
+                                <rect key="frame" x="6" y="34" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="くBack">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="KQS-Nu-2w8" kind="modal" modalTransitionStyle="flipHorizontal" id="rdY-Ny-XlY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <viewLayoutGuide key="safeArea" id="L84-hk-2fP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0e-Uy-to1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2244" y="149"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zgs-g2-YVF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="POu-WG-Irk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mh7-un-yiO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KQS-Nu-2w8" kind="relationship" relationship="rootViewController" id="eXF-jk-jJi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gfm-zI-Eb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="302"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="ad4-R2-xpc">
+            <objects>
+                <viewControllerPlaceholder id="TuG-gX-Igm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bv6-WJ-r4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EeS-55-u7i"/>
+        <segue reference="rdY-Ny-XlY"/>
+    </inferredMetricsTieBreakers>
+</document>
