@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D69ADD5E211D44C6000FCA8F /* HistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */; };
+		D69ADD60211D4650000FCA8F /* CalculationResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69ADD5F211D4650000FCA8F /* CalculationResults.swift */; };
 		D6AF6D66211535FD00AD4296 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AF6D65211535FD00AD4296 /* back.png */; };
 		D6FBF45F20FCC28F005F22F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBF45E20FCC28F005F22F3 /* AppDelegate.swift */; };
-		D6FBF46120FCC28F005F22F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBF46020FCC28F005F22F3 /* ViewController.swift */; };
+		D6FBF46120FCC28F005F22F3 /* MatrixCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBF46020FCC28F005F22F3 /* MatrixCalculator.swift */; };
 		D6FBF46420FCC28F005F22F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FBF46220FCC28F005F22F3 /* Main.storyboard */; };
 		D6FBF46920FCC290005F22F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FBF46720FCC290005F22F3 /* LaunchScreen.storyboard */; };
 		D6FBF47120FD5B4E005F22F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6FBF47020FD5B4E005F22F3 /* Assets.xcassets */; };
@@ -17,10 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTable.swift; sourceTree = "<group>"; };
+		D69ADD5F211D4650000FCA8F /* CalculationResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationResults.swift; sourceTree = "<group>"; };
 		D6AF6D65211535FD00AD4296 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		D6FBF45B20FCC28F005F22F3 /* Matrix!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matrix!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FBF45E20FCC28F005F22F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D6FBF46020FCC28F005F22F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D6FBF46020FCC28F005F22F3 /* MatrixCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixCalculator.swift; sourceTree = "<group>"; };
 		D6FBF46320FCC28F005F22F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6FBF46820FCC290005F22F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6FBF46A20FCC290005F22F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,8 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				D6FBF45E20FCC28F005F22F3 /* AppDelegate.swift */,
-				D6FBF46020FCC28F005F22F3 /* ViewController.swift */,
+				D6FBF46020FCC28F005F22F3 /* MatrixCalculator.swift */,
+				D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */,
 				D6FBF47220FD7434005F22F3 /* MatrixCell.swift */,
+				D69ADD5F211D4650000FCA8F /* CalculationResults.swift */,
 				D6FBF46220FCC28F005F22F3 /* Main.storyboard */,
 				D6FBF47020FD5B4E005F22F3 /* Assets.xcassets */,
 				D6AF6D65211535FD00AD4296 /* back.png */,
@@ -142,9 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6FBF46120FCC28F005F22F3 /* ViewController.swift in Sources */,
+				D6FBF46120FCC28F005F22F3 /* MatrixCalculator.swift in Sources */,
 				D6FBF47320FD7434005F22F3 /* MatrixCell.swift in Sources */,
 				D6FBF45F20FCC28F005F22F3 /* AppDelegate.swift in Sources */,
+				D69ADD60211D4650000FCA8F /* CalculationResults.swift in Sources */,
+				D69ADD5E211D44C6000FCA8F /* HistoryTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

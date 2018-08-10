@@ -13,7 +13,7 @@ class myCellType {
     var col: Int
     var row: Int
     
-    var value: Int = 0
+    var value: Double = 0
     var needHelight: Bool = false
     var userInput: Bool = false
     var pointer: UITextField
@@ -41,7 +41,13 @@ class myCellType {
     }
     
     func updateAfterTouched() {
-        pointer.text = "\(Int(value))"
+        if (value - Double(Int(value)) == 0) {
+            pointer.text = "\(Int(value))"
+        } else {
+            pointer.text = "\(value)"
+//            No need for this, at least for now
+//            "\(String(format: "%.2f", Double(round(1000*value)/1000)))"
+        }
         pointer.textColor = UIColor.white
         pointer.backgroundColor = UIColor.lightGray
         if needHelight {
@@ -65,7 +71,7 @@ class myCellType {
     
     func entryInput(_ message: String) {
         userInput = true
-        value = Int(message)!
+        value = Double(message)!
     }
     
     func deleteInput() {
