@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		477818F221357A6000BF128A /* DataPassingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477818F121357A6000BF128A /* DataPassingDelegate.swift */; };
 		47B270B5212A535600A0497D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B270B4212A535600A0497D /* TableViewCell.swift */; };
 		D69ADD5E211D44C6000FCA8F /* HistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */; };
 		D69ADD60211D4650000FCA8F /* CalculationResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69ADD5F211D4650000FCA8F /* CalculationResults.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		477818F121357A6000BF128A /* DataPassingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassingDelegate.swift; sourceTree = "<group>"; };
 		47B270B4212A535600A0497D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTable.swift; sourceTree = "<group>"; };
 		D69ADD5F211D4650000FCA8F /* CalculationResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationResults.swift; sourceTree = "<group>"; };
@@ -65,9 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				D6FBF46020FCC28F005F22F3 /* MatrixCalculator.swift */,
-				D6FBF47220FD7434005F22F3 /* MatrixCell.swift */,
 				D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */,
+				D6FBF47220FD7434005F22F3 /* MatrixCell.swift */,
 				47B270B4212A535600A0497D /* TableViewCell.swift */,
+				477818F121357A6000BF128A /* DataPassingDelegate.swift */,
 				D69ADD5F211D4650000FCA8F /* CalculationResults.swift */,
 				D6FBF46220FCC28F005F22F3 /* Main.storyboard */,
 				D6FBF47020FD5B4E005F22F3 /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 			files = (
 				D6FBF46120FCC28F005F22F3 /* MatrixCalculator.swift in Sources */,
 				D6FBF47320FD7434005F22F3 /* MatrixCell.swift in Sources */,
+				477818F221357A6000BF128A /* DataPassingDelegate.swift in Sources */,
 				D6FBF45F20FCC28F005F22F3 /* AppDelegate.swift in Sources */,
 				47B270B5212A535600A0497D /* TableViewCell.swift in Sources */,
 				D69ADD60211D4650000FCA8F /* CalculationResults.swift in Sources */,

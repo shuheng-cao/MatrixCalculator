@@ -19,8 +19,8 @@ class myCellType {
     var pointer: UITextField
     
     init(_ x: Int,_ y: Int,_ myPointer: UITextField) {
-        col = x
-        row = y
+        col = y
+        row = x
         pointer = myPointer
         initialize()
     }
@@ -58,13 +58,13 @@ class myCellType {
     }
     
     func updateHighlight(_ x: Int,_ y: Int) {
-        if (col <= x && row <= y) {
+        if (col <= y && row <= x) {
             needHelight = true
         }
     }
     
     func cancelHighlight(_ x: Int,_ y: Int) {
-        if (col > x || row > y) {
+        if (col > y || row > x) {
             needHelight = false
         }
     }

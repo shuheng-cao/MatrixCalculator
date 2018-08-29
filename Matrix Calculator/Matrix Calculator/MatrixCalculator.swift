@@ -44,6 +44,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var colSpaceButton: UIButton!
     @IBOutlet weak var transposeButton: UIButton!
     
+    
 
     override func viewDidLoad() {
         
@@ -79,10 +80,76 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         super.viewDidLoad()
         
+        // go to History Table by swipping
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        
+        // Adding extra feature to existing keyboard
+        for i in 0...3 {
+            for j in 0...3 {
+                let toolBar = UIToolbar()
+                toolBar.sizeToFit()
+                
+                let plusOrminusButton = UIBarButtonItem(title: "+ / -", style: .done, target: self, action: #selector(plusOrMinus))
+                
+                let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+                
+                let nextButton = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(self.nextCell))
+                
+                let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+                
+                toolBar.setItems([doneButton, flexibleSpace, plusOrminusButton, flexibleSpace, nextButton], animated: false)
+                
+                matrixCells[i][j].pointer.inputAccessoryView = toolBar
+            }
+        }
+        
         self.navigationController?.isNavigationBarHidden = true
         
+        // Hid the keyboard by touching outside
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         
+        
+        
+    }
+    
+    // For the use of additional feature in keyboard
+    @objc func plusOrMinus() {
+        for i in matrixCells {
+            for j in i {
+                if (j.pointer.isEditing) {
+                    let tmp = Double(j.pointer.text!)
+                    if (tmp != nil) {
+                        j.value = -tmp!
+                        j.updateAfterTouched()
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc func nextCell() {
+        var currentResponser: (Int, Int) = (1, 1)
+        for i in matrixCells {
+            for j in i {
+                if (j.pointer.isEditing) {
+                    currentResponser = (j.row, j.col)
+                }
+            }
+        }
+        if (currentResponser.1 != 4) {
+            matrixCells[currentResponser.0 - 1][currentResponser.1].pointer.becomeFirstResponder()
+        } else if (currentResponser.0 != 4) {
+            matrixCells[currentResponser.0][0].pointer.becomeFirstResponder()
+        } else {
+            matrixCells[0][0].pointer.becomeFirstResponder()
+        }
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     
     @objc func tap(sender: UITapGestureRecognizer){
@@ -96,6 +163,48 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     // Control Center: Any change in text field will be handled by this part
+   
+    // To swipe from left to right
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+                
+            case UISwipeGestureRecognizerDirection.left:
+                
+                //change view controllers
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let resultViewController = storyBoard.instantiateViewController(withIdentifier: "HistoryTable") as! HistoryTable
+                
+                resultViewController.modalTransitionStyle = .flipHorizontal
+                resultViewController.delegate = self
+                
+                self.present(resultViewController, animated: true, completion: nil)
+                
+            default:
+                break
+            }
+        }
+    }
+    
+    // TODO: To change VC using button
+    
+    @IBAction func historyButton(_ sender: UIButton) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "HistoryTable") as! HistoryTable
+        
+        resultViewController.modalTransitionStyle = .flipHorizontal
+        resultViewController.delegate = self
+        
+        self.present(resultViewController, animated: true, completion: nil)
+        
+    }
+    
     
     // Helper for editing text
     func helperForEdit(_ x: Int,_ y: Int,_ sender: UITextField) {
@@ -306,5 +415,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-
+extension ViewController: DataPassingDelegate {
+    func updateCurentMatrix(newMatrix: [[Double]]) {
+        for i in matrixCells {
+            for j in i {
+                j.initialize()
+            }
+        }
+        
+        for i in 0..<newMatrix.count {
+            
+            for j in 0..<newMatrix[0].count {
+                
+                matrixCells[i][j].value = Double(avoidRoundingError(x: newMatrix[i][j], precise: 2)) / 100
+                matrixCells[i][j].userInput = true
+                matrixCells[i][j].needHelight = true
+                matrixCells[i][j].updateAfterTouched()
+                
+            }
+            
+        }
+        
+    }
+}
 
