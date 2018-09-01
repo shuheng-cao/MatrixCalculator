@@ -12,4 +12,6 @@ protocol DataPassingDelegate {
     
     func updateCurentMatrix(newMatrix: [[Double]])
     
+    func updateSeconderyMatrix(newMatrix: [[Double]])
+    
 }

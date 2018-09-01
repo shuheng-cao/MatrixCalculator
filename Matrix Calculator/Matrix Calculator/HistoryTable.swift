@@ -12,29 +12,65 @@ class HistoryTable: UIViewController {
     
     var history: [myCalculationResult] = []
     var delegate: DataPassingDelegate?
+    var isPortrait: Bool = true
 
     @IBOutlet weak var tableView: UITableView!
     
+    // go back using button
     @IBAction func dismissTableView(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
         
     }
 
+    @IBOutlet weak var tmp: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createTestArray()
         
         tableView.estimatedRowHeight = 90.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // go back using swipe
         let swipeRight = UISwipeGestureRecognizer(target: self, action:  #selector(respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
         
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        switch UIDevice.current.orientation {
+        case .unknown:
+            tmp.text = "My History"
+            isPortrait = true
+        case .portrait:
+            tmp.text = "My History"
+            isPortrait = true
+        case .portraitUpsideDown:
+            tmp.text = "My History"
+            isPortrait = true
+        case .landscapeLeft:
+            tmp.text = "Detailed History"
+            isPortrait = false
+        case .landscapeRight:
+            tmp.text = "Detailed History"
+            isPortrait = false
+        case .faceUp:
+            tmp.text = "My History"
+            isPortrait = true
+        case .faceDown:
+            tmp.text = "My History"
+            isPortrait = true
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        self.tableView.reloadData()
+    }
+
     
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -55,33 +91,6 @@ class HistoryTable: UIViewController {
         }
     }
     
-    
-    
-    
-    func createTestArray() {
-        let test1 = myCalculationResult([[1, 2.499999999], [3.2, 4]], myOperations.inverse)
-        let test2 = myCalculationResult([[2, 3], [4.239995, 5], [6, 7.999999]], myOperations.diagonal)
-        let test3 = myCalculationResult([[-1, 2, 3, 4.234], [1.128, 2, 3, -4], [1, 222, 3, 4], [1, 2, 3, 4.22]], myOperations.eigenvalue)
-        let test4 = myCalculationResult([[2, 1, 1, 4],
-                                         [1, 3, 1, 3],
-                                         [0, 5, 1, 2],
-                                         [2.5, 3, 1.5, 4]], myOperations.RREF)
-        let test5 = myCalculationResult([[3, 2, -1, 1],
-                                         [1, 1, 0, 3],
-                                         [2, 3, -4, -7],
-                                         [3, -4, 3, -9]], myOperations.RREF)
-        let test6 = myCalculationResult([[2, 1.3, 1, 4],
-                                         [1.3, 3, 4.23, 0.34],
-                                         [0.2, 32, 12.3, 23.4]], myOperations.RREF)
-        
-        history.append(test1)
-        history.append(test2)
-        history.append(test3)
-        history.append(test4)
-        history.append(test5)
-        history.append(test6)
-    }
-    
 }
 
 extension HistoryTable: UITableViewDelegate, UITableViewDataSource {
@@ -94,7 +103,8 @@ extension HistoryTable: UITableViewDelegate, UITableViewDataSource {
         let result = history[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as! TableViewCell
-        cell.setHistoryCell(myResult: result)
+//        cell.enableButton()
+        cell.setHistoryCell(myResult: result, isPortrait)
         cell.delegate = self
         
         return cell
@@ -103,10 +113,17 @@ extension HistoryTable: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HistoryTable: DataPassingDelegate {
+    
     func updateCurentMatrix(newMatrix: [[Double]]) {
         delegate?.updateCurentMatrix(newMatrix: newMatrix)
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func updateSeconderyMatrix(newMatrix: [[Double]]) {
+        delegate?.updateSeconderyMatrix(newMatrix: newMatrix)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 

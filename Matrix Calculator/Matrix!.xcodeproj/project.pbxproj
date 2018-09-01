@@ -70,8 +70,8 @@
 				D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */,
 				D6FBF47220FD7434005F22F3 /* MatrixCell.swift */,
 				47B270B4212A535600A0497D /* TableViewCell.swift */,
-				477818F121357A6000BF128A /* DataPassingDelegate.swift */,
 				D69ADD5F211D4650000FCA8F /* CalculationResults.swift */,
+				477818F121357A6000BF128A /* DataPassingDelegate.swift */,
 				D6FBF46220FCC28F005F22F3 /* Main.storyboard */,
 				D6FBF47020FD5B4E005F22F3 /* Assets.xcassets */,
 				D6AF6D65211535FD00AD4296 /* back.png */,
@@ -108,6 +108,11 @@
 		D6FBF45320FCC28F005F22F3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					2,
+					3,
+				);
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "曹书恒";

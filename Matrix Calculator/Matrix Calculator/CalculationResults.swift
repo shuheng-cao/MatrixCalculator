@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Accelerate
 
 enum myOperations {
     case inverse
@@ -22,82 +23,58 @@ enum myOperations {
     case multiplication
 }
 
-// For debugging use
-var count = 0
-
-//func convertOperationIntoString(op: myOperations) -> String {
-//    switch op {
-//    case .inverse:
-//        return "inverse"
-//    case .power:
-//        return "power"
-//    case .determinate:
-//        return "determinate"
-//    case .diagonal:
-//        return "diagoanl"
-//    case .RREF:
-//        return "RREF"
-//    case .eigenvalue:
-//        return "eigenvalue"
-//    case .transpose:
-//        return "transpose"
-//    case .addition:
-//        return "+"
-//    case .substraction:
-//        return "-"
-//    case .multiplication:
-//        return "*"
-//    }
-//}
-
-//class myMatrix {
-//    var row: Int
-//    var col: Int
-//    var matrixEntries: [[Double]]
-//    init(_ input: [[Double]]) {
-//        row = input.count
-//        col = input[0].count
-//        matrixEntries = input
-//    }
-//}
-
 class myCalculationResult {
-    var operationType: myOperations
-    var degreeOfPower = 0
+    // For inverse operation only
+    var invertible = false
     // For power operation only
+    var degreeOfPower = 0
+    // For eigenvalues only
+    var eigenvectors: [[Double]] = []
+    // For diagonalizable only
+    var diagonalizable: Bool = false
+    // For landscape mode only
+    var secondMatrix: [[Double]] = []
+    // General Case:
+    var operationType: myOperations
     var inputMatrix: [[Double]]
-    var outputMatrix: [[Double]] = [[0]]
-    init(_ input: [[Double]],_ operation: myOperations,_ power: Int = 0) {
+    var outputMatrix: [[Double]]
+    init(_ input: [[Double]],_ operation: myOperations,_ power: Int = 0,_ secondInput: [[Double]] = []) {
         operationType = operation
         degreeOfPower = power
         inputMatrix = input
+        secondMatrix = secondInput
         switch operation {
         case .RREF:
             outputMatrix = calRREF(myMatrix: input)
-            print("RREF: \(calRREF(myMatrix: input))")
         case .inverse:
-            print("inverse: ")
+            if (calDeterminant(myMatrix: input) != 0) {
+                invertible = true
+            }
+            outputMatrix = calInverse(myMatrix: input)
         case .power:
-            print("power: ")
+            outputMatrix = calPower(myMatrix: input, toPower: power)
         case .determinate:
-            print("det: \(calDeterminant(myMatrix: input))")
+            outputMatrix = [[calDeterminant(myMatrix: input)]]
         case .diagonal:
-            print("diagonal: ")
+            let tmp = calDiagonal(myMatrix: input)
+            outputMatrix = [tmp.1]
+            eigenvectors = tmp.0
+            diagonalizable = tmp.2
         case .eigenvalue:
-            print("eigenvalue: ")
+            outputMatrix = [calEigenvalue(myMatrix: input)]
         case .transpose:
-            print("transpose: ")
+            outputMatrix = calTranspose(myMatrix: input)
         case .addition:
-            print("addition: ")
+            outputMatrix = calAddition(leftMatrix: inputMatrix, rightMatrix: secondMatrix)
         case .substraction:
-            print("substraction: ")
+            outputMatrix = calSubstrraction(leftMatrix: inputMatrix, rightMatrix: secondMatrix)
         case .multiplication:
-            print("multiplication: ")
+            outputMatrix = calMultiplication(leftMatrix: inputMatrix, rightMatrix: secondMatrix)
         }
     }
 }
 
-// find the determinant
+// MARK: Determinant
 func calDeterminant(myMatrix: [[Double]]) -> Double {
     if (myMatrix.count == 2) {
         return myMatrix[0][0] * myMatrix[1][1] - myMatrix[0][1] * myMatrix[1][0]
@@ -128,15 +105,15 @@ func deleteRowAndColumn(myMatrix: [[Double]], x: Int, y: Int) -> [[Double]] {
             newMatrix.append(tmp)
         }
     }
-    print(newMatrix)
+//    print(newMatrix)
     return newMatrix
 }
 
-// helper for RREF
+// MARK: RREF
 func calRREF(myMatrix: [[Double]]) -> [[Double]] {
-    
-    count += 1
-    print("round \(count): \(myMatrix)")
+//
+//    count += 1
+//    print("round \(count): \(myMatrix)")
     
     if (myMatrix.count == 1) {
 //      Base Case I
@@ -204,35 +181,41 @@ func calRREF(myMatrix: [[Double]]) -> [[Double]] {
             for j in 1..<newMatrix.count {
                 newMatrix[j] = makeTheFisrtZero(newMatrix[0], rowToBeMutate: newMatrix[j], p: 0)
             }
-        }
         
-        // the remaining should be in RREF form
-        let theRemaining: [[Double]] = calRREF(myMatrix: ingnoreTheFirstColAndRow(aMatrix: newMatrix))
-        
-        newMatrix = [newMatrix[0]]
-//        Adding zeros to the first col
-        for i in theRemaining {
-            var tmp: [Double] = i
-            tmp.insert(0, at: 0)
-            newMatrix.append(tmp)
-        }
-        
-        count += 1
-        print("round \(count): \(newMatrix)")
-        
-//         TODO: erase the non-zero number in first line
-        for i in 1..<newMatrix.count {
-            let indexOfLeadingOne = leadingOne(aRow: newMatrix[i])
-            if (indexOfLeadingOne == -1) {
-                continue
-            } else {
-                let newFirstRow = makeTheFisrtZero(newMatrix[i], rowToBeMutate: newMatrix[0], p: indexOfLeadingOne)
-                newMatrix[0] = newFirstRow
+            
+            // the remaining should be in RREF form
+            let theRemaining: [[Double]] = calRREF(myMatrix: ingnoreTheFirstColAndRow(aMatrix: newMatrix))
+            
+            newMatrix = [newMatrix[0]]
+            //        Adding zeros to the first col
+            for i in theRemaining {
+                var tmp: [Double] = i
+                tmp.insert(0, at: 0)
+                newMatrix.append(tmp)
             }
+            
+            //        count += 1
+            //        print("round \(count): \(newMatrix)")
+            
+            //         TODO: erase the non-zero number in first line
+            for i in 1..<newMatrix.count {
+                let indexOfLeadingOne = leadingOne(aRow: newMatrix[i])
+                if (indexOfLeadingOne == -1) {
+                    continue
+                } else {
+                    let newFirstRow = makeTheFisrtZero(newMatrix[i], rowToBeMutate: newMatrix[0], p: indexOfLeadingOne)
+                    newMatrix[0] = newFirstRow
+                }
+            }
+        } else {
+            // when the first col are all zeros
+            let theRemaining: [[Double]] = calRREF(myMatrix: ignoreTheFirstCol(aMatrix: newMatrix))
+            newMatrix = []
+            newMatrix = addingZerosAsFirstCol(aMatrix: theRemaining)
         }
         
-        count += 1
-        print("round \(count): \(newMatrix)")
+//        count += 1
+//        print("round \(count): \(newMatrix)")
         
 //        At last, orgonize it in the correct order
         for i in 0..<newMatrix.count {
@@ -248,6 +231,18 @@ func calRREF(myMatrix: [[Double]]) -> [[Double]] {
 
 //    helper for RREF
 //    Require: the first item must be 1 at index p
+func addingZerosAsFirstCol(aMatrix: [[Double]]) -> [[Double]] {
+    var newMatrix: [[Double]] = []
+    
+    for i in aMatrix {
+        var tmp = i
+        tmp.insert(0, at: 0)
+        newMatrix.append(tmp)
+    }
+    
+    return newMatrix
+}
+
 func makeTheFisrtZero(_ rowWithLeadingOne: [Double], rowToBeMutate: [Double], p: Int) -> [Double] {
     var newRow: [Double] = []
     
@@ -278,6 +273,19 @@ func ingnoreTheFirstColAndRow(aMatrix: [[Double]]) -> [[Double]] {
     }
     
     return newMatrix
+}
+
+func ignoreTheFirstCol(aMatrix: [[Double]]) -> [[Double]] {
+        var newMatrix: [[Double]] = []
+        for i in aMatrix {
+            var tmp: [Double] = []
+            for j in 1..<i.count {
+                tmp.append(i[j])
+            }
+            newMatrix.append(tmp)
+        }
+        
+        return newMatrix
 }
 
 func leadingOne(aRow: [Double]) -> Int {
@@ -318,7 +326,7 @@ func allZero(aRow: [Double]) -> Bool {
     return true
 }
 
-// very useful tool but not shown in my APP
+// MARK: Rank
 func calRank(myMatrix: [[Double]]) -> Int {
     
     var count = 0
@@ -333,5 +341,243 @@ func calRank(myMatrix: [[Double]]) -> Int {
     return count
 }
 
+// MARK: Transpose
+func calTranspose(myMatrix: [[Double]]) -> [[Double]] {
+    
+    var newMatrix: [[Double]] = []
+    
+    for i in 0..<myMatrix[0].count {
+        var tmp: [Double] = []
+        for j in 0..<myMatrix.count {
+            tmp.append(myMatrix[j][i])
+        }
+        newMatrix.append(tmp)
+    }
+    
+    return newMatrix
+}
+
+// MARK: Inverse
+func calInverse(myMatrix: [[Double]]) -> [[Double]] {
+    
+    var newMatrix: [[Double]] = []
+    
+    var addingIdentity: [[Double]] = []
+    for i in 0..<myMatrix.count {
+        var tmp: [Double] = myMatrix[i]
+        for j in 0..<myMatrix[0].count {
+            if (j == i) {
+                tmp.append(1)
+            } else {
+                tmp.append(0)
+            }
+        }
+        addingIdentity.append(tmp)
+    }
+    
+    let rrefForm = calRREF(myMatrix: addingIdentity)
+    
+    for i in 0..<addingIdentity.count {
+        var tmp: [Double] = []
+        for j in myMatrix[0].count..<addingIdentity[0].count {
+            tmp.append(rrefForm[i][j])
+        }
+        newMatrix.append(tmp)
+    }
+    
+    return newMatrix
+}
+
+// MARK: Multiplication
+func calMultiplication(leftMatrix: [[Double]], rightMatrix: [[Double]]) -> [[Double]] {
+    
+    var newMatrix: [[Double]] = []
+    
+    
+    for row in 0..<leftMatrix.count {
+        var tmpRow: [Double] = []
+        for col in 0..<rightMatrix[0].count {
+            var sum: Double = 0
+            for k in 0..<leftMatrix[0].count {
+                sum += leftMatrix[row][k] * rightMatrix[k][col]
+            }
+            tmpRow.append(sum)
+        }
+        newMatrix.append(tmpRow)
+    }
+    
+    return newMatrix
+}
+
+// MARK: Power
+func calPower(myMatrix: [[Double]], toPower: Int) -> [[Double]] {
+    
+    var newMatrix: [[Double]] = myMatrix
+    
+    for _ in 1..<toPower {
+        newMatrix = calMultiplication(leftMatrix: newMatrix, rightMatrix: myMatrix)
+    }
+    
+    return newMatrix
+}
+
+// MARK: Diagonalization
+func calDiagonal(myMatrix: [[Double]]) -> ([[Double]], [Double], Bool) {
+    
+    
+    
+    var matrix:[__CLPK_doublereal] = flattenMatrix(myMatrix: myMatrix)
+    
+    var N = __CLPK_integer(sqrt(Double(matrix.count)))
+    //var pivots = [__CLPK_integer](repeating: 0, count: Int(N))
+    
+    var LDA = N
+    
+    var wkOpt = __CLPK_doublereal(0.0)
+    var lWork = __CLPK_integer(-1)
+    
+    var jobvl: Int8 = 86 // 'V'
+    var jobvr: Int8 = 86 // 'V'
+    
+    var error = __CLPK_integer(0)
+    // Real parts of eigenvalues
+    var wr = [Double](repeating: 0, count: Int(N))
+    // Imaginary parts of eigenvalues
+    var wi = [Double](repeating: 0, count: Int(N))
+    // Left eigenvectors
+    var vl = [__CLPK_doublereal](repeating: 0, count: Int(N*N))
+    // Right eigenvectors
+    var vr = [__CLPK_doublereal](repeating: 0, count: Int(N*N))
+    
+    var ldvl = N
+    var ldvr = N
+    
+    /* Query and allocate the optimal workspace */
+    var workspaceQuery: Double = 0.0
+    dgeev_(&jobvl, &jobvr, &N, &matrix, &LDA, &wr, &wi, &vl, &ldvl, &vr, &ldvr, &workspaceQuery, &lWork, &error)
+    
+    
+    // size workspace per the results of the query:
+    var workspace = [Double](repeating: 0.0, count: Int(workspaceQuery))
+    lWork = __CLPK_integer(workspaceQuery)
+    
+    /* Compute eigen vectors */
+    dgeev_(&jobvl, &jobvr, &N, &matrix, &LDA, &wr, &wi, &vl, &ldvl, &vr, &ldvr, &workspace, &lWork, &error)
+    
+    var newMatrix: [[Double]] = myMatrix
+    
+    for i in 0..<myMatrix.count {
+        for j in 0..<myMatrix[0].count {
+            newMatrix[j][i] = vl[i * myMatrix.count + j]
+        }
+    }
+    
+    // To check whether the eigenvals are correct
+    var count = 0
+    var diagonalizable = true
+    var acc: [Int] = []
+    
+    for i in 0..<wr.count {
+        let tmp = calSubstrraction(leftMatrix: myMatrix, rightMatrix: scalarIdentityMatrix(dimension: myMatrix.count, scaler: wr[i]))
+        let rank = calRank(myMatrix: tmp)
+        if (rank == myMatrix.count) {
+            acc.append(i)
+            diagonalizable = false
+        } else {
+            count += myMatrix.count - rank
+        }
+    }
+    
+    for i in (0..<acc.count).reversed() {
+        wr.remove(at: acc[i])
+    }
+    
+    if (count != myMatrix.count) {
+        diagonalizable = false
+    }
+    
+    // To avoid repeat
+    var arrayOfEigenvals: [Double] = []
+    for i in wr {
+        var tmp = Double(round(i * 1000) / 1000)
+        if (!includedIn(tmp, arrayOfEigenvals)) {
+            arrayOfEigenvals.append(tmp)
+        }
+    }
+    
+    
+    return (newMatrix, arrayOfEigenvals, diagonalizable);
+}
+
+// helper for egienvals
+func includedIn(_ x: Double,_ arrayOfDouble: [Double]) -> Bool {
+    for i in arrayOfDouble {
+        if (x == i) { return true }
+    }
+    return false
+}
+
+func flattenMatrix(myMatrix: [[Double]]) -> [__CLPK_doublereal] {
+    
+    var tmp:[__CLPK_doublereal] = []
+    
+    for i in myMatrix {
+        for j in i {
+            tmp.append(__CLPK_doublereal(j))
+        }
+    }
+    
+    return tmp
+}
+
+func scalarIdentityMatrix(dimension: Int, scaler: Double) -> [[Double]] {
+    var newMatrix: [[Double]] = []
+    
+    for i in 0..<dimension {
+        var tmp: [Double] = []
+        for j in 0..<dimension {
+            if (i == j) {
+                tmp.append(scaler)
+            } else {
+                tmp.append(0)
+            }
+        }
+        newMatrix.append(tmp)
+    }
+    
+    return newMatrix
+}
+
+// MARK: Eigenvalues
+func calEigenvalue(myMatrix: [[Double]]) -> [Double] {
+    return calDiagonal(myMatrix: myMatrix).1
+}
+
+// MARK: Addition and Substraction
+func calAddition(leftMatrix:[[Double]], rightMatrix: [[Double]]) -> [[Double]] {
+    var newMatrix: [[Double]] = []
+    for i in 0..<leftMatrix.count {
+        var tmp: [Double] = []
+        for j in 0..<leftMatrix[0].count {
+            tmp.append(leftMatrix[i][j] + rightMatrix[i][j])
+        }
+        newMatrix.append(tmp)
+    }
+    
+    return newMatrix
+}
+
+func calSubstrraction(leftMatrix:[[Double]], rightMatrix: [[Double]]) -> [[Double]] {
+    var newMatrix: [[Double]] = []
+    for i in 0..<leftMatrix.count {
+        var tmp: [Double] = []
+        for j in 0..<leftMatrix[0].count {
+            tmp.append(leftMatrix[i][j] - rightMatrix[i][j])
+        }
+        newMatrix.append(tmp)
+    }
+    
+    return newMatrix
+}
 
 
