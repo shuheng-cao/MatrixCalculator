@@ -28,6 +28,10 @@ class HistoryTable: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (history.count != 0) {
+            self.tableView.separatorColor = UIColor.white
+        }
+        
         tableView.estimatedRowHeight = 90.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -43,13 +47,13 @@ class HistoryTable: UIViewController {
 
         switch UIDevice.current.orientation {
         case .unknown:
-            tmp.text = "My History"
+            tmp.text = "History"
             isPortrait = true
         case .portrait:
-            tmp.text = "My History"
+            tmp.text = "History"
             isPortrait = true
         case .portraitUpsideDown:
-            tmp.text = "My History"
+            tmp.text = "History"
             isPortrait = true
         case .landscapeLeft:
             tmp.text = "Detailed History"
@@ -58,10 +62,10 @@ class HistoryTable: UIViewController {
             tmp.text = "Detailed History"
             isPortrait = false
         case .faceUp:
-            tmp.text = "My History"
+            tmp.text = "History"
             isPortrait = true
         case .faceDown:
-            tmp.text = "My History"
+            tmp.text = "History"
             isPortrait = true
         }
     }
@@ -75,6 +79,7 @@ class HistoryTable: UIViewController {
         history = []
         delegate?.updateHistory(newHistory: history)
         self.tableView.reloadData()
+        self.tableView.separatorColor = UIColor.black
     }
     
     
