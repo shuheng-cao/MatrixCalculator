@@ -50,7 +50,7 @@ class myCalculationResult {
             if (calDeterminant(myMatrix: input) != 0) {
                 invertible = true
             }
-            outputMatrix = calInverse(myMatrix: input)
+            outputMatrix = calInverse(input)
         case .power:
             outputMatrix = calPower(myMatrix: input, toPower: power)
         case .determinate:
@@ -358,33 +358,73 @@ func calTranspose(myMatrix: [[Double]]) -> [[Double]] {
 }
 
 // MARK: Inverse
-func calInverse(myMatrix: [[Double]]) -> [[Double]] {
+//func calInverse(myMatrix: [[Double]]) -> [[Double]] {
+//
+//    var newMatrix: [[Double]] = []
+//
+//    var addingIdentity: [[Double]] = []
+//    for i in 0..<myMatrix.count {
+//        var tmp: [Double] = myMatrix[i]
+//        for j in 0..<myMatrix[0].count {
+//            if (j == i) {
+//                tmp.append(1)
+//            } else {
+//                tmp.append(0)
+//            }
+//        }
+//        addingIdentity.append(tmp)
+//    }
+//
+//    let rrefForm = calRREF(myMatrix: addingIdentity)
+//
+//    for i in 0..<addingIdentity.count {
+//        var tmp: [Double] = []
+//        for j in myMatrix[0].count..<addingIdentity[0].count {
+//            tmp.append(rrefForm[i][j])
+//        }
+//        newMatrix.append(tmp)
+//    }
+//
+//    return newMatrix
+//}
+
+func calInverse(_ A: [[Double]]) -> [[Double]] {
+//    precondition(A.rows == A.cols, "Matrix dimensions must agree")
+    var M = __CLPK_integer(A.count)
+    var N = M
+    var LDA = N
+    var pivot = [__CLPK_integer](repeating: 0, count: Int(N))
     
+    var wkOpt = __CLPK_doublereal(0.0)
+    var lWork = __CLPK_integer(-1)
+    
+    var error: __CLPK_integer = 0
+    var flattenedMatrix = flattenMatrix(myMatrix: A)
+    
+    dgetrf_(&M, &N, &flattenedMatrix, &LDA, &pivot, &error)
+    
+//    precondition(error == 0, "Matrix is non invertible")
+    
+    /* Query and allocate the optimal workspace */
+    
+    dgetri_(&N, &flattenedMatrix, &LDA, &pivot, &wkOpt, &lWork, &error)
+    
+    lWork = __CLPK_integer(wkOpt)
+//    var work = Vector(repeating: 0.0, count: Int(lWork))
+    
+    /* Compute inversed matrix */
+    
+    dgetri_(&N, &flattenedMatrix, &LDA, &pivot, &wkOpt, &lWork, &error)
+    
+//    precondition(error == 0, "Matrix is non invertible")
     var newMatrix: [[Double]] = []
-    
-    var addingIdentity: [[Double]] = []
-    for i in 0..<myMatrix.count {
-        var tmp: [Double] = myMatrix[i]
-        for j in 0..<myMatrix[0].count {
-            if (j == i) {
-                tmp.append(1)
-            } else {
-                tmp.append(0)
-            }
-        }
-        addingIdentity.append(tmp)
-    }
-    
-    let rrefForm = calRREF(myMatrix: addingIdentity)
-    
-    for i in 0..<addingIdentity.count {
+    for i in 0..<A.count {
         var tmp: [Double] = []
-        for j in myMatrix[0].count..<addingIdentity[0].count {
-            tmp.append(rrefForm[i][j])
+        for j in 0..<A.count {
+            tmp.append(flattenedMatrix[i * A.count + j])
         }
         newMatrix.append(tmp)
     }
-    
     return newMatrix
 }
 

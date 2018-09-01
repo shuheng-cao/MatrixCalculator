@@ -44,7 +44,7 @@ class myCellType {
         if (value - Double(Int(value)) == 0) {
             pointer.text = "\(Int(value))"
         } else {
-            pointer.text = "\(value)"
+            pointer.text = "\(Double(avoidRoundingError(x: value, precise: 2)) / 100)"
 //            No need for this, at least for now
 //            "\(String(format: "%.2f", Double(round(1000*value)/1000)))"
         }

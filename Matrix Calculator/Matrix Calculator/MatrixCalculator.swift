@@ -339,7 +339,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let resultViewController = storyBoard.instantiateViewController(withIdentifier: "HistoryTable") as! HistoryTable
         
         // passing history table
-        resultViewController.history = self.history
+        resultViewController.history = history
         
         resultViewController.modalTransitionStyle = .flipHorizontal
         resultViewController.delegate = self
@@ -767,6 +767,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension ViewController: DataPassingDelegate {
+    func updateHistory(newHistory: [myCalculationResult]) {
+        history = newHistory
+    }
+    
     
     func updateCurentMatrix(newMatrix: [[Double]]) {
         for i in matrixCells {
@@ -779,8 +783,8 @@ extension ViewController: DataPassingDelegate {
             
             for j in 0..<newMatrix[0].count {
                 
-                matrixCells[i][j].value =
-                    Double(avoidRoundingError(x: newMatrix[i][j], precise: 2)) / 100
+                matrixCells[i][j].value = newMatrix[i][j]
+//                    Double(avoidRoundingError(x: newMatrix[i][j], precise: 2)) / 100
                 matrixCells[i][j].userInput = true
                 matrixCells[i][j].needHelight = true
                 matrixCells[i][j].updateAfterTouched()
@@ -803,8 +807,8 @@ extension ViewController: DataPassingDelegate {
             
             for j in 0..<newMatrix[0].count {
                 
-                secondMatrixCells[i][j].value =
-                    Double(avoidRoundingError(x: newMatrix[i][j], precise: 2)) / 100
+                secondMatrixCells[i][j].value = newMatrix[i][j]
+//                    Double(avoidRoundingError(x: newMatrix[i][j], precise: 2)) / 100
                 secondMatrixCells[i][j].userInput = true
                 secondMatrixCells[i][j].needHelight = true
                 secondMatrixCells[i][j].updateAfterTouched()

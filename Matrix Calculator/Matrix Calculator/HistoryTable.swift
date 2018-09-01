@@ -71,6 +71,11 @@ class HistoryTable: UIViewController {
         self.tableView.reloadData()
     }
 
+    @IBAction func clearAllHistory(_ sender: UIButton) {
+        history = []
+        delegate?.updateHistory(newHistory: history)
+        self.tableView.reloadData()
+    }
     
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -110,9 +115,23 @@ extension HistoryTable: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            
+            self.history.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            delegate?.updateHistory(newHistory: history)
+        }
+    }
+    
 }
 
 extension HistoryTable: DataPassingDelegate {
+    func updateHistory(newHistory: [myCalculationResult]) {
+        
+    }
+    
     
     func updateCurentMatrix(newMatrix: [[Double]]) {
         delegate?.updateCurentMatrix(newMatrix: newMatrix)
@@ -123,6 +142,7 @@ extension HistoryTable: DataPassingDelegate {
         delegate?.updateSeconderyMatrix(newMatrix: newMatrix)
         self.dismiss(animated: true, completion: nil)
     }
+
     
 }
 

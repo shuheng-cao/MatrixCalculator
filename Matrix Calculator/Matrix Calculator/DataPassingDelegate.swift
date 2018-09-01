@@ -14,4 +14,5 @@ protocol DataPassingDelegate {
     
     func updateSeconderyMatrix(newMatrix: [[Double]])
     
+    func updateHistory(newHistory: [myCalculationResult])
 }
