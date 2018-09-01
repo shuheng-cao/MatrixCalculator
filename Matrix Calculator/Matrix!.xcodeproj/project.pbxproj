@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		477818F221357A6000BF128A /* DataPassingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477818F121357A6000BF128A /* DataPassingDelegate.swift */; };
 		47B270B5212A535600A0497D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B270B4212A535600A0497D /* TableViewCell.swift */; };
+		47DB2522213AFC3400D043B1 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DB2520213AFC3300D043B1 /* StartController.swift */; };
+		47DB2523213AFC3400D043B1 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DB2521213AFC3300D043B1 /* CircularTransition.swift */; };
 		D69ADD5E211D44C6000FCA8F /* HistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */; };
 		D69ADD60211D4650000FCA8F /* CalculationResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69ADD5F211D4650000FCA8F /* CalculationResults.swift */; };
 		D6AF6D66211535FD00AD4296 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AF6D65211535FD00AD4296 /* back.png */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		477818F121357A6000BF128A /* DataPassingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassingDelegate.swift; sourceTree = "<group>"; };
 		47B270B4212A535600A0497D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		47DB2520213AFC3300D043B1 /* StartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
+		47DB2521213AFC3300D043B1 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTable.swift; sourceTree = "<group>"; };
 		D69ADD5F211D4650000FCA8F /* CalculationResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationResults.swift; sourceTree = "<group>"; };
 		D6AF6D65211535FD00AD4296 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		D6FBF45D20FCC28F005F22F3 /* Matrix Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				47DB2521213AFC3300D043B1 /* CircularTransition.swift */,
+				47DB2520213AFC3300D043B1 /* StartController.swift */,
 				D6FBF46020FCC28F005F22F3 /* MatrixCalculator.swift */,
 				D69ADD5D211D44C6000FCA8F /* HistoryTable.swift */,
 				D6FBF47220FD7434005F22F3 /* MatrixCell.swift */,
@@ -161,7 +167,9 @@
 			files = (
 				D6FBF46120FCC28F005F22F3 /* MatrixCalculator.swift in Sources */,
 				D6FBF47320FD7434005F22F3 /* MatrixCell.swift in Sources */,
+				47DB2522213AFC3400D043B1 /* StartController.swift in Sources */,
 				477818F221357A6000BF128A /* DataPassingDelegate.swift in Sources */,
+				47DB2523213AFC3400D043B1 /* CircularTransition.swift in Sources */,
 				D6FBF45F20FCC28F005F22F3 /* AppDelegate.swift in Sources */,
 				47B270B5212A535600A0497D /* TableViewCell.swift in Sources */,
 				D69ADD60211D4650000FCA8F /* CalculationResults.swift in Sources */,
