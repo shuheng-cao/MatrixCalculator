@@ -12,7 +12,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
   * ## Portrait Version
     * ### Input Area
       ### The App will autofill all position 0 to make a matrix
-    ![](https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/Input.gif)
+    ![](https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/Input.gif =240x400)
     * ### Button Area
     _Missing GIF_
     * ### History Area
