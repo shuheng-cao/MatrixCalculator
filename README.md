@@ -9,7 +9,7 @@
 * ## Breakdowns
   * ## Portrait Version
     * ### Input Area
-    
+    ### The App will autofill all position 0 to make a matrix
     _Mising GIF_
     * ### Button Area
     _Missing GIF_
