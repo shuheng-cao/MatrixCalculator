@@ -3,7 +3,8 @@
 ### *Warning: This APP is built on iPhone 7 and haven't been adapted for other version. Sorry for the inconvenience.*
 
 * ## Quick Presentation
-  _Missing GIF_
+
+  [![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
 
 * ## Breakdowns
   * ## Portrait Version
