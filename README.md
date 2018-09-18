@@ -11,17 +11,17 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
 * ## Breakdowns
   * ## Portrait Version
     * ### Input Area
-      ### The App will autofill all position 0 to make a matrix
-      ### We also have a customized toolbar above our keyborad for better typing experience
+      #### The App will autofill all position 0 to make a matrix
+      #### We also have a customized toolbar above our keyborad for better typing experience
         <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/Input.gif" width="240" height="400" />
     
     * ### Button Area
-      ### Having most of the commonly used unary operation on matrix, including inverse, RREF, determinate, eigenvalue, etc.
-      ### By touching any opertaion button, the screen will automatically change to history. Moreover, we can also access history by touching history button or *swipe from right to left*
+      #### Having most of the commonly used unary operation on matrix, including inverse, RREF, determinate, eigenvalue, etc.
+      #### By touching any opertaion button, the screen will automatically change to history. Moreover, we can also access history by touching history button or *swipe from right to left*
       <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/button.gif" width="240" height="400" />
       
     * ### History Area
-    _Missing GIF_
+      
   * ## Landscape Version
     * ### Input Area
     _Mising GIF_
