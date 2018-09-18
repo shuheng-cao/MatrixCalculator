@@ -4,7 +4,7 @@
 
 * ## Quick Presentation
 
-  [![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
+  [![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=mE6tqVVTXzQ&t=21s)
 
 * ## Breakdowns
   * ## Portrait Version
