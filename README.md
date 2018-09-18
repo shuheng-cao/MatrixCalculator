@@ -21,7 +21,9 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
       <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/button.gif" width="240" height="400" />
       
     * ### History Area
-      
+      #### Portrait version of history has only the result matrix for the sake of simplicity
+      #### In this version, we can use set A and set B button to set result matrix to our originakl left or right matrix
+      #### Also, there are two ways to go back to calculation screen either by touching back button or by *swiping from left to right*
   * ## Landscape Version
     * ### Input Area
     _Mising GIF_
