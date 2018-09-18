@@ -16,7 +16,9 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
         <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/Input.gif" width="240" height="400" />
     
     * ### Button Area
-    _Missing GIF_
+      ### Having most of the commonly used unary operation on matrix, including inverse, RREF, determinate, eigenvalue, etc.
+      ### By touching any opertaion button, the screen will automatically change to history. Moreover, we can also access history by touching history button or *swipe from right to left*
+      
     * ### History Area
     _Missing GIF_
   * ## Landscape Version
