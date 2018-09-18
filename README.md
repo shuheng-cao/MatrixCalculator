@@ -1,6 +1,6 @@
 # MatrixCalculator
 
-### *Warning: This APP is built on iPhone 7 and haven't been adapted for other version. Sorry for the inconvenience.*
+### *Warning: This APP is built on iPhone 7 and haven't been adapted for other version. Sorry for any inconvenience.*
 
 * ## Quick Presentation
   
@@ -26,9 +26,4 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
       #### Also, there are two ways to go back to calculation screen either by touching back button or by *swiping from left to right*
        <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/history.gif" width="240" height="400" />
   * ## Landscape Version
-    * ### Input Area
-    _Mising GIF_
-    * ### Button Area
-    _Missing GIF_
-    * ### History Area
-    _Missing GIF_
+    
