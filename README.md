@@ -4,7 +4,7 @@
 
 * ## Quick Presentation
 
-  [![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=mE6tqVVTXzQ&t=21s)
+  [![Watch the video](https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/IMG_3388.PNG)](https://www.youtube.com/watch?v=mE6tqVVTXzQ&t=21s)
 
 * ## Breakdowns
   * ## Portrait Version
