@@ -12,6 +12,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
   * ## Portrait Version
     * ### Input Area
       ### The App will autofill all position 0 to make a matrix
+      ### We also have a customized toolbar in front of our keyborad for better typing experience
         <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/Input.gif" width="240" height="400" />
     
     * ### Button Area
