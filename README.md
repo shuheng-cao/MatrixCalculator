@@ -9,7 +9,7 @@
 alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
 
 * ## Breakdowns
-  * ## Portrait Version
+  * ## Portrait Mode
     * ### Input Area
       #### The App will autofill all position 0 to make a matrix
       #### We also have a customized toolbar above our keyborad for better typing experience
@@ -25,5 +25,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
       #### In this version, we can use set A and set B button to set result matrix to our originakl left or right matrix
       #### Also, there are two ways to go back to calculation screen either by touching back button or by *swiping from left to right*
        <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/history.gif" width="240" height="400" />
-  * ## Landscape Version
-    
+  * ## Landsacpe Mode's special features:
+      * ### Four more binary operations
+      * ### Full version of history, including more details
+      * ### One drawback of landscape mode is that if we input using keyboard, half of the content will be covered. As a result, I highly recommend type in numbers in portrait mode first and exchange left and right matrix.
