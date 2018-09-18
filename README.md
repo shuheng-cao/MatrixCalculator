@@ -12,7 +12,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
   * ## Portrait Version
     * ### Input Area
       ### The App will autofill all position 0 to make a matrix
-    ![](https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/Input.gif =240x400)
+    <img src="https://camo.githubusercontent.com/..." data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
     * ### Button Area
     _Missing GIF_
     * ### History Area
