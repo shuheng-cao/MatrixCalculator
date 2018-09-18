@@ -13,6 +13,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
     * ### Input Area
       ### The App will autofill all position 0 to make a matrix
     <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/Input.gif" width="240" height="400" />
+    
     * ### Button Area
     _Missing GIF_
     * ### History Area
