@@ -29,3 +29,4 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
       * ### Four more binary operations
       * ### Full version of history, including more details
       * ### One drawback of landscape mode is that if we input using keyboard, half of the content will be covered. As a result, I highly recommend type in numbers in portrait mode first and exchange left and right matrix.
+        <img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/landscape.gif" width="400" height="240" />
