@@ -4,7 +4,7 @@
 
 * ## Quick Presentation
 
-  [![Watch the video](https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/IMG_3388.PNG)](https://www.youtube.com/watch?v=mE6tqVVTXzQ&t=21s)
+  [![Watch the video](https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/IMG_E5469F8F9779-1.jpeg)](https://www.youtube.com/watch?v=mE6tqVVTXzQ&t=21s)
 
 * ## Breakdowns
   * ## Portrait Version
