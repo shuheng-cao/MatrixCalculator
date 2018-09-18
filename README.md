@@ -3,8 +3,10 @@
 ### *Warning: This APP is built on iPhone 7 and haven't been adapted for other version. Sorry for the inconvenience.*
 
 * ## Quick Presentation
-
-  [![Watch the video](https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/IMG_E5469F8F9779-1.jpeg)](https://www.youtube.com/watch?v=mE6tqVVTXzQ&t=21s)
+  
+  <a href="https://www.youtube.com/watch?v=mE6tqVVTXzQ&t=21s
+" target="_blank"><img src="https://github.com/shuster-cao/MatrixCalculator/blob/master/pics/IMG_E5469F8F9779-1.jpeg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="400" border="10" /></a>
 
 * ## Breakdowns
   * ## Portrait Version
