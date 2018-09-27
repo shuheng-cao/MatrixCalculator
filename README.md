@@ -1,6 +1,6 @@
 # MatrixCalculator
 
-### *Warning: This APP is built on iPhone 7 and haven't been adapted for other version. Sorry for any inconvenience.*
+### *Warning: This APP is built on iPhone 7 and above haven't been adapted for older version. Sorry for any inconvenience.*
 
 * ## Quick Presentation
   
